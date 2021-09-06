@@ -1,0 +1,175 @@
+Terminal ubuntu Linux aula;
+
+O terminal, Shell ou konsole é uma linha de comando onde podemos executar programas específicos
+do Linux
+A maioria dos comandos sao iguais em diversas distribuições
+tipos de comando
+cd - muda de direção
+ls - listagem
+pwd - verificação do caminho atual 
+mkdir - comando para criar pastas etc
+\ - diretorio do sistema linux
+history - comando exibe o historico do terminal
+history -c - limpa o historico
+mv - mover um arquivo ou renomear um arquivo/diretorio
+touch - cria arquivos vazio sem conteúdo
+copy(cp) - comando que copia arquivos
+rmdir- remove diretorios/rm remove arquivos
+cat - exibe contéudo do arquivo
+tac - inversão do comando cat
+head - imprime 10 linhas de um arquivo
+tail - comando que imprime as ultimas 10 linhas
+date - data
+more - comando de paginação
+less - comando de paginação
+|(pipe) 
+file - determina o tipo do arquivo
+whatis - comando que informa a funçao de outros comandos
+alias - da um nickname para determinado comando
+nl - exibe números de linha de um arquivo
+wc -l - exibe números de linha de um arquivo resumidamente
+wc -w - exibe quantidades de palavras dentro de um arquivo
+wc --help
+cmp - compara arquivos
+sort -n - organiza em forma númerica
+route -n - exibe todas tabelas de roteamento de ip do Kernel
+init 0 - desliga a máquina
+telinit 0 - desliga a máquina
+halt - desliga a máquina
+seq - imprime uma sequencia de números
+find - procurar arquivos
+env - variáveis do ambiente
+
+O linux é o kernel do sistema operacional 
+Ubuntu é uma distribuição Linux
+
+Diretorios do Sistema linux
+Novos comandos
+pasta proc - contem informações sobre o sistema
+lspci - consegue identificar todo hardware do computador/maquinavirtual em pci
+lsusb - portas usb
+lspcu - outro comando de informaçao sobre a cpu/maquinavirtual
+lshw -short - mostra caminhos de hardware
+arch - arquitetura do sistema kernel
+uname - descobri o kernel
+uname -r - versão
+free - saída de memora fisica e memoria swap
+du -h(human readable(leitura facilitada para o humano)) ~: verificar todo diretorio pessoal
+reboot - reinicia a maquina virtual
+shutdown -h [tempo] - comando para desligar a maquina
+
+Rede - "Rede de computadores é um conjunto de equipamentos interligados de 
+maneira a trocarem informações e compartilharem recursos, como arquivos
+de dados gravados impressoras, modems, softwares e outros equipamentos". (Sousa 1999)
+Rede Wan - redes globais e continentais
+Rede Man - redes metropolitanas interligam redes locais
+Rede lan - redes locais
+Protocolo é a 'linguagem' usada pelos dispositivos de uma rede de modo que eles consigam
+entender(Torres, 2004)
+IP-Protocolo de Internet - Endereço IP - números que identificam seu computador em uma rede
+ICMP - (Internet Control Message Protocol) tem por objetivo prover mensagens de controle na
+comunicação entre nós
+DNS - Domain Name Server - Esse protocolo de aplicação tem por funçao identificar Endereços Ip
+e manter uma tabela com os endereços dos caminhos de algumas redes
+Interface de Rede
+Interface de rede é um software e/ou hardware que faz a comunicação em uma rede de computadores
+
+As interfaces de rede no Linux estão localizadas no diretório /dev e a maioria é criada dinami
+camente pelos softwares quando são requisitados
+ex: eth0 - placa de rede ethernet - cabeada
+Interface loopback é um tipo especial de interface que permite fazer conexões com você mesmo,
+com ela, você pode testar vários programas de rede sem interferir em sua rede. padrão, o endere
+ço IP 127.0.0.1 foi escolhido para loopback
+comandos de rede 
+hostname - exibe o nome do computador na rede(host)
+hostname -I - exibe o endereço do computador na rede
+hostname -i - exibe endereço loopback
+who - saber como está logado na rede
+whoami - nome do usuario que está logado na rede atual
+ping - faz parte do protocolo ICMP envia mensagens de controle para determinado host
+dig opçao(+short(monstra só o DNS))- informaçoes sobre DNS
+traceroute - traçar rota de uma rede para um determinado host
+whois - exibe informações sobre o domínio
+finger - exibe informação sobre o usuario logado no atual host
+
+Controle de usuários, grupos e permissões LINUX
+sudo - permite que eleve o privilegio 
+su (nomedousuario) - troca de usuário
+passwd (nomedousuario) - troca senha do usuário
+adduser (nomedousuario) - adiciona novo usuario
+lastlog - exibe informações de login de todos usuários
+last - exibe uam listagem de entrada e saída do usuário no sistema
+logname - exibe nome do usuario atual logado no sistema
+id - exibe todos identificadores do usuario
+userdel -r nomedousuario - remover um usuária e pasta pessoal do mesmo
+sudo su - troca para usuario root
+
+GRUPOS permitem organizar os usuários e definir as permissões de acesso a
+arquivos e diretórios de forma mais fácil.
+cat /etc/group - exibe grupos
+groups - exibe todos os grupos de um usuário
+addgroup - cria um grupo
+adduser(gpasswd) usuario grupo - Adiciona um usuário a um grupo
+gpasswd(-a e -d) usuario grupo - comando -a Adiciona usuario comando a um/-d Remove usuario de
+um grupo
+groupdel grupo - remove um grupo
+
+Permissões em arquivos e diretórios servem para restringir acessos como leitura,
+escrita e execução onde
+r - read (leitura)
+w - write (escrita)
+x - eXecution (execução)
+ls -lh - verifica permissões de um diretorio
+chmod - mudar a permissão de um arquivo ou diretorio
+
+Compactação, Descompactação e ARquivamento
+Compactadores são programas que diminuem o tamanho de um arquivo ou diretorio
+gzip -- compactador muito usado, possui uma taxa excelente de compactação
+gunzip - descompactação
+gzip -9 arquivo.txt > usa a taxa de compactação maxima do gzip
+zip - compactador uso (1st)arquivo.zip (2st)arquivo.txt
+unzip arquivo.zip - descompactação
+bzip2 - compactador mais atual
+bizp2 arquivo - Uso do compactador
+bzip -d arquivo.bz2 - descompactação
+rar - compactador forma de uso: rar a arquivo.rar arquivo
+rar - descompactação forma de uso: rar x arquivo.rar
+
+Extensões identificam o tipo de um arquivo e o programa necessário para manipular
+o mesmo, dezenas de extensões identificam arquivos compactados, quando um arquivo
+é compactado, uma extensão é adicionada ao nome do arquivo
+
+Exemplo: se um arquivo é compactado pelo programa rar, o mesmo receberá a extensão .rar
+Ao descompactar a extensão é removida do arquivo
+
+Um "arquivador" junta vários arquivos em um só mas pode ser usado em conjunto com um compac
+tador para armazenar arquivos compactados
+tar - o tar é um arquivador muito utilizado no linux até mesmo em arquivos de sistema
+forma de uso: tar -cf nomedoarquivo.txt.tar nomedoarquivo.txt
+tar.gz - descompactador forma de uso: tar -xvf aulasrede.txt.tar.gz
+
+Pacotes são programas colocados dentro de um arquivo identificados por sua extensão, e
+incluem arquivos necessarios para a instalação de programa
+Existem pacotes com a extensão .deb, .rpm e outros
+
+Gerenciadores de pacotes são sistemas que possuem resolução automática de dependências
+entre pacotes, método fácil de instalação de pacotes
+Exemplos de Gerenciadores: dpkg, apt e yum 
+Instalação
+sudo apt install nomedoprograma
+Atualizaçao
+sudo apt upgrade nomedopacote
+Remoção
+sudo apt remove nomedopacote
+Atualização de sistema
+apt update && apt upgrade
+
+dpkg forma de uso sudo dpkg -i - instalação do pacote
+dpkg forma de uso sudo dpkg -I pacote.deb - Informações do pacote
+dpkg forma de uso sudo dpkg -r nomedopacote - Remoção do pacote
+
+ 
+
+
+
+
